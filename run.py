@@ -99,7 +99,30 @@ def play_game():
 
 
 def reset():
-    print("This will reset everything ready to play again")
+    """
+    Resets the game and asks the user if they would like to play again.
+    """
+    global MYSTERY_WORD
+    global REMAINING_GUESSES
+    global GUESSES
+    global REVEALED_LETTERS
+    global PLAY_AGAIN
+    MYSTERY_WORD = []
+    REMAINING_GUESSES = 5
+    GUESSES = []
+    REVEALED_LETTERS = []
+    PLAY_AGAIN = True
+    replay = ""
+    while not isinstance(replay, bool):
+        replay = input("Would you like to play again?\n").lower()
+        if replay == "yes" or replay == "y":
+            replay = True
+        elif replay == "no" or replay == "n":
+            PLAY_AGAIN = False
+            replay = False
+        else:
+            print("Please choose 'yes' or 'no'")
+    print("------------------------------------\n")
 
 
 print("Welcome!")
