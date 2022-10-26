@@ -54,7 +54,7 @@ def check_guess(guess):
             print(f"You've already guessed {guess}!")
         else:
             print("Please enter one letter!")
-        guess = input("Guess a letter:").lower()
+        guess = input("Guess a letter:\n").lower()
     GUESSES.append(guess)
     if guess not in MYSTERY_WORD:
         print(f"Sorry, {guess} isn't correct!")
