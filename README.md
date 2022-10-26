@@ -1,31 +1,38 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman
+## How to play
 
-Welcome MaddieCastle,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Features
+- Word length chosen by user, between 4 and 7 letters long.
+- Random word of chosen length picked from 500 words of each length.
+- Display number of guesses remaining.
+- Display letters already guessed.
+- Reveals word if user runs out of guesses.
+- Input validation
+  - Choosing the word length requires a number between 4 and 7.
+  - Guesses require a single alphabetic character.
+  - Previously guessed letters can't be guessed again.
+  - Invalid values display a message and promt resubmission.
 
-## Reminders
+## Testing
+I have tested the code via:
+- A PEP8 linter
+- Inputting invalid inputs
+- In my local terminal
+All methods returned no problems.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Bugs
+### Solved Bugs
+### Remaining Bugs
+No bugs remain.
 
-## Creating the Heroku app
+## Deployment
+This game was deployed in Code institute's mock terminal for Heroku.
+1. Create a Heroku app
+2. Step two
+3. Set buildbacks to Python and then NodeJS
+4. Link the app to the GitHub repository.
+5. Click on
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+## Credits
+- Code institue for the mock terminal
