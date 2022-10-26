@@ -2,6 +2,7 @@ import random
 MYSTERY_WORD = []
 REMAINING_GUESSES = 5
 GUESSES = []
+REVEALED_LETTERS = []
 PLAY_AGAIN = True
 
 
@@ -42,14 +43,59 @@ def get_word(length):
 
 
 def check_guess(guess):
-    print("This will check if the guessed letter is in the mystery word.")
+    """
+    Checks the players guess against the mystery word.
+    """
+    global REMAINING_GUESSES
+    global GUESSES
+    global REVEALED_LETTERS
+    while (len(guess) > 1 or not guess.isalpha()) or guess in GUESSES:
+        if guess in GUESSES:
+            print(f"You've already guessed {guess}!")
+        else:
+            print("Please enter one letter!")
+        guess = input("Guess a letter:").lower()
+    GUESSES.append(guess)
+    if guess not in MYSTERY_WORD:
+        print(f"Sorry, {guess} isn't correct!")
+        print("------------------------------------\n")
+        REMAINING_GUESSES = REMAINING_GUESSES - 1
+        print(f"Guesses remaining: {REMAINING_GUESSES}\n")
+        return
+    if guess in MYSTERY_WORD:
+        for ind in range(len(MYSTERY_WORD)):
+            if MYSTERY_WORD[ind] == guess:
+                REVEALED_LETTERS[ind] = guess
 
 
 def play_game():
-    print("this will be the main function that runs the game")
+    """
+    Main function that runs the game.
+    """
     global MYSTERY_WORD
+    global REMAINING_GUESSES
+    global GUESSES
+    global REVEALED_LETTERS
+    MYSTERY_WORD = []
+    REMAINING_GUESSES = 5
+    GUESSES = []
+    print("Guess letters to find the word before you run out of attempts!")
     MYSTERY_WORD = [letter for letter in get_word(get_word_length())]
-    print(MYSTERY_WORD)
+    for letter in MYSTERY_WORD:
+        REVEALED_LETTERS.append("*")
+    print("------------------------------------\n")
+    print(f"Guesses remaining: {REMAINING_GUESSES}\n")
+    while REMAINING_GUESSES > 0:
+        if GUESSES:
+            if "*" not in REVEALED_LETTERS:
+                print("Congratulations, you win!")
+                return
+            print(f"Letters guessed: {', '.join(GUESSES)}\n")
+            print(f"Correct letters: {''.join(REVEALED_LETTERS)}\n")
+        check_guess(input("Guess a letter:\n").lower())
+    if REMAINING_GUESSES == 0:
+        print("Better luck next time!")
+        print(f"The word was:{''.join(MYSTERY_WORD)}")
 
 
 def reset():
