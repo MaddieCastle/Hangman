@@ -12,7 +12,7 @@ The mystery word is displayed a number of *'s.
 
 The player guesses letters that they think might be in the mystery word.
 
-Inncorrect guesses causes the remaining guesses counter to decrease.
+Incorrect guesses causes the remaining guesses counter to decrease.
 
 Correct guesses replace the corresponding * in the mystery word with the guessed letter.
 
@@ -21,7 +21,7 @@ The player wins by guessing all the letters before the remaining guesses counter
 ## Features
 - Word length chosen by user, between 4 and 7 letters long.
 
-![Image of word length input screeen](/images/wordlength.jpg)
+![Image of word length input screen](/images/wordlength.jpg)
 - Random word of chosen length picked from 500 words of each length.
 - Display number of guesses remaining.
 - Display letters already guessed.
@@ -34,9 +34,9 @@ The player wins by guessing all the letters before the remaining guesses counter
   - Choosing the word length requires a number between 4 and 7.
   - Guesses require a single alphabetic character.
   - Previously guessed letters can't be guessed again.
-  - Invalid values display a message and promt resubmission.
+  - Invalid values display a message and prompt resubmission.
 
-![image showing resubmission promt](/images/letterguessed.jpg)
+![image showing resubmission prompt](/images/letterguessed.jpg)
 
 ## Testing
 I have tested the code via:
@@ -61,5 +61,5 @@ This game is deployed in Code institute's mock terminal for Heroku [here.](https
 5. Click on enable automatic deploys
 
 ## Credits
-- Code institue for the mock terminal
+- Code institute for the mock terminal
 - [The Free Dictionary](https://www.thefreedictionary.com/) for the word lists
